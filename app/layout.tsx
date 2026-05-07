@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const cinzel = Cinzel({ subsets: ["latin"], variable: "--font-serif" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://vamatherapy.com'),
   title: 'VAMA Therapy - Premium Japanese & Ayurvedic Therapies in Pune',
   description: 'Experience luxury Japanese head, hair, facial, and pedicure therapies in Pune. Combining Shiatsu and Ayurvedic techniques for complete relaxation.',
   keywords: 'Japanese Head Massage Pune, Ayurvedic Therapy Pune, Spa Wanowrie, Facial Therapy, Pedicure Therapy, Wellness Center Pune',
