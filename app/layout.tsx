@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Cinzel } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { SocialFloat } from '@/components/social-float'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -42,6 +43,7 @@ export default function RootLayout({
     <html lang="en" className="bg-background scroll-smooth overflow-x-hidden" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${cinzel.variable} font-sans antialiased bg-background text-foreground overflow-x-hidden`}>
         {children}
+        <SocialFloat />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

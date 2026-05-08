@@ -30,7 +30,7 @@ export default function Home() {
 
   // Optimize performance on mobile by disabling parallax
   const [isMobile, setIsMobile] = useState(true);
-  
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -42,7 +42,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-black selection:bg-black selection:text-white">
+    <div className="min-h-screen bg-white text-black">
       <Header />
 
       {/* Hero Section */}
@@ -88,7 +88,7 @@ export default function Home() {
               variants={fadeIn}
               className="text-xl md:text-3xl text-white/90 mb-12 font-sans font-light max-w-2xl leading-relaxed drop-shadow-lg tracking-wide"
             >
-              Premium Japanese & Ayurvedic Therapy In Pune
+              Premium Japanese Head and Hair Therapy In Pune
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
@@ -130,14 +130,14 @@ export default function Home() {
       {/* Premium Full Width Stats Section */}
       <section className="relative z-30 w-full bg-black py-24 md:py-32 overflow-hidden border-b border-white/10">
         {/* Aesthetic Background Image with Parallax effect */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay"
           style={{ backgroundImage: "url('/head-massage.jpg')", backgroundAttachment: "fixed" }}
         ></div>
-        
+
         {/* Elegant Color Mask */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/95 via-black/80 to-[#0a0a0a]/95"></div>
-        
+
         {/* Subtle top glow */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
@@ -210,7 +210,7 @@ export default function Home() {
           </motion.div>
 
           {/* Mobile Swipe Indicator */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -456,7 +456,7 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-[auto_auto] md:grid-rows-[400px_400px] gap-3 md:gap-5">
             {/* Large Feature Video */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -467,7 +467,7 @@ export default function Home() {
                 <source src="/videos/vama.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-700"></div>
-              
+
               <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
                 <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
                   <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] uppercase tracking-widest font-bold mb-4">
@@ -482,7 +482,7 @@ export default function Home() {
             </motion.div>
 
             {/* Video 1 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -494,14 +494,14 @@ export default function Home() {
               </video>
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
               <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-                 <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
-                    Facial
-                  </span>
+                <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
+                  Facial
+                </span>
               </div>
             </motion.div>
 
             {/* Video 2 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -512,15 +512,15 @@ export default function Home() {
                 <source src="/videos/home.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
-               <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-                 <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
-                    Therapy
-                  </span>
+              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
+                <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
+                  Therapy
+                </span>
               </div>
             </motion.div>
 
             {/* Video 3 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -531,15 +531,15 @@ export default function Home() {
                 <source src="/videos/pedicure.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
-               <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-                 <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
-                    Pedicure
-                  </span>
+              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
+                <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
+                  Pedicure
+                </span>
               </div>
             </motion.div>
 
             {/* Video 4 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -551,9 +551,9 @@ export default function Home() {
               </video>
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
               <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-                 <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
-                    Head & Hair
-                  </span>
+                <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] md:text-[10px] uppercase tracking-widest font-bold">
+                  Head & Hair
+                </span>
               </div>
             </motion.div>
 
@@ -586,9 +586,9 @@ export default function Home() {
 
             {/* Review Call to Action */}
             <div className="flex shrink-0 w-full md:w-auto">
-              <a 
-                href="https://share.google/Q7K2yDnmLwN0l5y9A" 
-                target="_blank" 
+              <a
+                href="https://share.google/Q7K2yDnmLwN0l5y9A"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center gap-3 border border-white/30 text-white hover:bg-white hover:text-black uppercase tracking-widest text-sm font-bold px-8 py-5 rounded-full transition-all duration-500 w-full md:w-auto hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
               >

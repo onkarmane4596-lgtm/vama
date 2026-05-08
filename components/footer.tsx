@@ -133,8 +133,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="text-center text-white/40 text-xs font-light tracking-widest mt-16 uppercase">
+        <div className="text-center text-white/40 text-[10px] md:text-xs font-light tracking-widest mt-16 uppercase flex flex-col items-center gap-4">
           <p>&copy; {new Date().getFullYear()} VAMA Therapy. All rights reserved.</p>
+          <div className="flex items-center gap-2 text-white/20">
+            <span>Powered by</span>
+            <a 
+              href="https://wa.me/918830610158" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-white transition-colors border-b border-transparent hover:border-white/40 pb-0.5"
+            >
+              Techsarthi
+            </a>
+          </div>
         </div>
       </div>
     </footer>
