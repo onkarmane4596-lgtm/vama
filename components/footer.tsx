@@ -30,7 +30,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-white/60 leading-relaxed font-light text-sm">
-              Pune&apos;s premier destination for Japanese Shiatsu and Ayurvedic wellness therapies. A sanctuary for your soul.
+              Pune&apos;s premier academy for international beauty &amp; wellness therapy courses. IAF ISO certified certifications for professional growth.
             </p>
           </div>
 
@@ -38,7 +38,7 @@ export function Footer() {
           <div>
             <h3 className="font-serif text-sm uppercase tracking-[0.2em] font-bold mb-8">Explore</h3>
             <ul className="space-y-4">
-              {['Home', 'Services', 'About Us', 'Contact'].map((item) => (
+              {['Home', 'Courses', 'About', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link 
                     href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`} 
@@ -52,22 +52,24 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Courses */}
           <div>
-            <h3 className="font-serif text-sm uppercase tracking-[0.2em] font-bold mb-8">Services</h3>
+            <h3 className="font-serif text-sm uppercase tracking-[0.2em] font-bold mb-8">Courses</h3>
             <ul className="space-y-4">
               {[
-                { name: 'Facial Therapy', id: 'facial' },
-                { name: 'Head & Hair Therapy', id: 'head-hair' },
-                { name: 'Pedicure Therapy', id: 'pedicure' }
-              ].map((service) => (
-                <li key={service.id}>
+                { name: 'Facial Therapy', id: 'facial-therapy' },
+                { name: 'Head & Hair Therapy', id: 'head-hair-therapy' },
+                { name: 'Pedicure Therapy', id: 'pedicure-therapy' },
+                { name: 'Bamboo Massage', id: 'bamboo-massage' },
+                { name: 'Sound Bath Reiki', id: 'sound-bath-reiki' }
+              ].map((course) => (
+                <li key={course.id}>
                   <Link 
-                    href={`/services#${service.id}`} 
+                    href={`/courses#${course.id}`} 
                     className="text-white/60 hover:text-white transition-colors text-sm font-light uppercase tracking-wider flex items-center group"
                   >
                     <span className="w-0 h-[1px] bg-white mr-0 group-hover:w-4 group-hover:mr-2 transition-all duration-300"></span>
-                    {service.name}
+                    {course.name}
                   </Link>
                 </li>
               ))}

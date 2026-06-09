@@ -4,9 +4,10 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { MapPin, Phone, Mail, Clock, ArrowRight, MessageCircle } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, ArrowRight, MessageCircle, Check } from 'lucide-react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -25,6 +26,27 @@ const staggerContainer = {
 }
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    mobile: '',
+    city: '',
+    interest: 'Training'
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const message = `Hello VAMA Therapy, I am submitting a consultation request from the Contact page.\n\n*Name:* ${formData.name}\n*Mobile:* ${formData.mobile}\n*City:* ${formData.city}\n*Interested In:* ${formData.interest}`
+    const whatsappUrl = `https://wa.me/919172550666?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
+    setSubmitted(true)
+  }
+
   return (
     <div className="min-h-screen bg-white text-black selection:bg-black selection:text-white">
       <Header />
@@ -53,14 +75,14 @@ export default function Contact() {
               Get In Touch
             </motion.h1>
             <motion.p variants={fadeIn} className="text-sm md:text-xl text-white/70 max-w-xl font-light leading-relaxed">
-              We are here to help! Contact us today to book your therapy session.
+              We are here to help! Contact us today to learn more about our courses and academy.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
       {/* Contact Details & Quick Connect */}
-      <section className="py-8 md:py-12 bg-white relative overflow-hidden">
+      <section className="py-12 md:py-20 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             
@@ -69,7 +91,7 @@ export default function Contact() {
               initial="initial"
               whileInView="whileInView"
               variants={staggerContainer}
-              className="flex flex-col"
+              className="flex flex-col justify-center"
             >
               <motion.div variants={fadeIn} className="flex items-center gap-3 mb-6 text-black/50">
                 <span className="text-[10px] font-sans uppercase tracking-[0.2em] font-bold">Our Location</span>
@@ -77,7 +99,7 @@ export default function Contact() {
               </motion.div>
               
               <motion.h2 variants={fadeIn} className="text-3xl md:text-5xl font-serif font-bold text-black mb-10 uppercase tracking-tight">
-                Visit Our <br /> Center
+                Visit Our <br /> Academy
               </motion.h2>
 
               <div className="space-y-4">
@@ -131,76 +153,97 @@ export default function Contact() {
                     <Clock className="w-4 h-4 text-white/80" />
                   </div>
                   <div className="w-full">
-                    <h3 className="font-serif font-bold text-base mb-2">Opening Hours</h3>
+                    <h3 className="font-serif font-bold text-base mb-2">Office Hours</h3>
                     <div className="text-white/60 text-xs md:text-sm space-y-1.5 font-light tracking-wide w-full">
-                      <p className="flex justify-between gap-4"><span className="text-white/80 font-medium">Mon - Fri</span> 11:00 AM - 8:00 PM</p>
-                      <p className="flex justify-between gap-4"><span className="text-white/80 font-medium">Saturday</span> 11:00 AM - 8:00 PM</p>
-                      <p className="flex justify-between gap-4"><span className="text-white/80 font-medium">Sunday</span> 11:00 AM - 8:00 PM</p>
+                      <p className="flex justify-between gap-4"><span className="text-white/80 font-medium">Mon - Sun</span> 11:00 AM - 8:00 PM</p>
                     </div>
                   </div>
                 </motion.div>
               </div>
             </motion.div>
 
-            {/* Quick Connect (Right) */}
+            {/* Quick Connect / Consultation Form (Right) */}
             <motion.div 
               initial="initial"
               whileInView="whileInView"
               variants={staggerContainer}
               className="flex flex-col justify-center"
             >
-              <div className="bg-black/5 p-6 md:p-8 rounded-2xl border border-black/5">
-                <motion.h2 variants={fadeIn} className="text-2xl md:text-3xl font-serif font-bold text-black mb-4 uppercase tracking-tight">
-                  Direct Contact
-                </motion.h2>
-                <motion.div variants={fadeIn} className="w-10 h-1 bg-black mb-4"></motion.div>
+              <div className="bg-[#F9F9F9] p-8 md:p-10 rounded-[2rem] border border-black/5 shadow-lg">
+                <h3 className="font-serif font-bold text-2xl text-black mb-6 uppercase tracking-wide">Consultation Form</h3>
                 
-                <motion.p variants={fadeIn} className="text-black/60 font-light leading-relaxed mb-6 text-sm">
-                  We're delighted to hear from you! The quickest way to book your session or ask questions is directly through WhatsApp. Our dedicated team is always ready to assist you.
-                </motion.p>
+                {submitted ? (
+                  <div className="text-center py-10">
+                    <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Check className="w-8 h-8" />
+                    </div>
+                    <h4 className="font-serif font-bold text-xl mb-2">Message Sent!</h4>
+                    <p className="text-sm text-black/60 font-light mb-6">
+                      Click the button below to message us directly on WhatsApp.
+                    </p>
+                    <Button className="bg-black text-white w-full rounded-none" asChild>
+                      <a href="https://wa.me/919172550666" target="_blank" rel="noopener noreferrer">Open WhatsApp Chat</a>
+                    </Button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                      <label className="block text-[10px] uppercase tracking-widest font-bold text-black/70 mb-2">Name</label>
+                      <input 
+                        type="text" 
+                        name="name" 
+                        required 
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Your Name" 
+                        className="w-full bg-white border border-black/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors"
+                      />
+                    </div>
 
-                <motion.div variants={fadeIn} className="space-y-3">
-                  <Button 
-                    size="lg"
-                    className="w-full group relative overflow-hidden bg-black text-white hover:text-black text-xs md:text-sm uppercase tracking-[0.15em] font-bold py-6 rounded-full transition-all duration-500 shadow-lg hover:shadow-2xl"
-                    asChild
-                  >
-                    <a href="https://wa.me/919172550666" target="_blank" rel="noopener noreferrer">
-                      <span className="relative z-10 flex items-center justify-center gap-3">
-                        <MessageCircle className="w-4 h-4" />
-                        Chat on WhatsApp
-                      </span>
-                      <div className="absolute inset-0 bg-white translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-y-0" />
-                    </a>
-                  </Button>
+                    <div>
+                      <label className="block text-[10px] uppercase tracking-widest font-bold text-black/70 mb-2">Mobile Number</label>
+                      <input 
+                        type="tel" 
+                        name="mobile" 
+                        required 
+                        value={formData.mobile}
+                        onChange={handleInputChange}
+                        placeholder="Mobile Number" 
+                        className="w-full bg-white border border-black/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors"
+                      />
+                    </div>
 
-                  <Button 
-                    variant="outline"
-                    size="lg"
-                    className="w-full group relative overflow-hidden border-2 border-black bg-transparent text-black hover:text-white text-xs md:text-sm uppercase tracking-[0.15em] font-bold py-6 rounded-full transition-all duration-500"
-                    asChild
-                  >
-                    <a href="tel:+919172550666">
-                      <span className="relative z-10 flex items-center justify-center gap-3">
-                        <Phone className="w-4 h-4" />
-                        Call Us Directly
-                      </span>
-                      <div className="absolute inset-0 bg-black translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-y-0" />
-                    </a>
-                  </Button>
-                </motion.div>
+                    <div>
+                      <label className="block text-[10px] uppercase tracking-widest font-bold text-black/70 mb-2">City</label>
+                      <input 
+                        type="text" 
+                        name="city" 
+                        required 
+                        value={formData.city}
+                        onChange={handleInputChange}
+                        placeholder="Your City" 
+                        className="w-full bg-white border border-black/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors"
+                      />
+                    </div>
 
-                <motion.div variants={fadeIn} className="mt-6 pt-6 border-t border-black/10 text-center">
-                  <Link 
-                    href="https://share.google/xfVMInRWSjW0oiicf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-bold text-black/70 hover:text-black transition-colors group"
-                  >
-                    Open in Maps
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </motion.div>
+                    <div>
+                      <label className="block text-[10px] uppercase tracking-widest font-bold text-black/70 mb-2">Interested In</label>
+                      <select 
+                        name="interest"
+                        value={formData.interest}
+                        onChange={handleInputChange}
+                        className="w-full bg-white border border-black/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors"
+                      >
+                        <option value="Training">Training &amp; Courses</option>
+                        <option value="Therapy">Therapy &amp; Services</option>
+                      </select>
+                    </div>
+
+                    <Button type="submit" className="w-full bg-black text-white hover:bg-black/90 py-6 uppercase tracking-[0.2em] text-xs font-bold rounded-lg transition-transform active:scale-95 shadow-md">
+                      Request Consultation
+                    </Button>
+                  </form>
+                )}
               </div>
             </motion.div>
           </div>
@@ -208,13 +251,13 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-8 md:py-12 bg-[#F9F9F9] border-y border-black/5">
+      <section className="py-12 md:py-20 bg-[#F9F9F9] border-y border-black/5">
         <div className="container mx-auto px-4 md:px-12">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center max-w-2xl mx-auto mb-16 md:mb-20"
+            className="text-center max-w-2xl mx-auto mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-6 uppercase tracking-tight">
               Frequently Asked
@@ -230,28 +273,28 @@ export default function Contact() {
           >
             {[
               {
-                question: "How do I book an appointment?",
-                answer: "Simply send us a message on WhatsApp (+91 9172 550 666) or call us directly. Our team will promptly confirm your preferred time and service."
+                question: "Where is the training location?",
+                answer: "Our practical training is conducted at 93 Avenue Mall, Wanowrie, Pune, India. We also host live Look & Learn webinars online for international students."
               },
               {
-                question: "What should I expect in my first session?",
-                answer: "Your first visit includes a brief consultation to understand your wellness needs. Our therapist will customize the treatment specifically for you."
+                question: "Do I get certified after completing?",
+                answer: "Yes, you will receive international level certification recognized under VAMA Therapy. We hold IAF ISO certified credentials to establish business validity."
               },
               {
-                question: "How long are the treatments?",
-                answer: "Most treatments range from 60 to 120 minutes. We believe in taking our time to deliver genuine results without rushing the healing process."
+                question: "Is accommodation and food included in the bundle?",
+                answer: "Yes. The complete bundle package includes professional stay arrangements and food facilities in Pune for the duration of the course."
               },
               {
-                question: "Are your therapists certified?",
-                answer: "Absolutely. All our therapists are professionally trained in authentic Japanese Shiatsu and Ayurvedic techniques, with extensive experience."
+                question: "What support is provided after the courses?",
+                answer: "We offer private WhatsApp group mentorship and lifetime doubt clearing assistance. You also get lifetime access to weekly manifesting calls on Mondays."
               },
               {
-                question: "What if I have health concerns?",
-                answer: "Please mention any conditions or allergies when booking. Our team will ensure your treatment is adjusted appropriately for your safety."
+                question: "Can beginners enroll in these courses?",
+                answer: "Absolutely. Our step-by-step videos and detailed demonstrations are designed to suit both salon professionals and absolute beginners."
               },
               {
-                question: "Can I gift a therapy session?",
-                answer: "Yes! VAMA Therapy gift sessions make wonderful wellness gifts. Contact us via WhatsApp to arrange a personalized gift package."
+                question: "How do I purchase the salon equipment?",
+                answer: "We provide guidance on where to buy premium Japanese & Korean beds, products, and botanical kits at discounted wholesale prices."
               }
             ].map((faq, index) => (
               <motion.div 
@@ -272,60 +315,16 @@ export default function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="py-0 h-[200px] md:h-[300px] w-full relative bg-gray-200">
+      <section className="py-0 h-[300px] md:h-[400px] w-full relative bg-gray-200">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.743171120351!2d73.8967!3d18.4952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1c000000001%3A0x1234567890abcdef!2s93%20Avenue%20Mall!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
           className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-1000" 
           allowFullScreen 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
-          title="VAMA Therapy Location"
+          title="VAMA Therapy Academy Location"
         ></iframe>
-        {/* Subtle overlay for styling */}
         <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="relative py-16 md:py-24 overflow-hidden flex items-center justify-center bg-black">
-        <div className="absolute inset-0">
-          <Image
-            src="/hero-spa.jpg"
-            alt="Background"
-            fill
-            className="object-cover opacity-20 grayscale"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
-        </div>
-        
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 container mx-auto px-4 md:px-12 text-center flex flex-col items-center"
-        >
-          <div className="w-12 md:w-20 h-[1px] bg-white/30 mb-8 md:mb-12"></div>
-          <h2 className="text-4xl md:text-6xl lg:text-8xl font-serif font-bold text-white mb-6 uppercase tracking-tight leading-[1.1] drop-shadow-xl">
-            Book Your <br className="hidden md:block"/> Session Now
-          </h2>
-          <p className="text-sm md:text-xl text-white/70 mb-10 max-w-2xl mx-auto font-light leading-relaxed tracking-wide">
-            Contact us today and let our expert therapists help you completely relax.
-          </p>
-          <Button 
-            size="lg"
-            className="group relative overflow-hidden bg-white text-black hover:text-white text-xs md:text-sm uppercase tracking-[0.15em] font-bold px-8 md:px-12 py-6 md:py-8 rounded-full transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:shadow-[0_0_50px_rgba(255,255,255,0.2)] hover:-translate-y-1 w-full sm:w-auto"
-            asChild
-          >
-            <a href="https://wa.me/919172550666" target="_blank" rel="noopener noreferrer">
-              <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3">
-                Message Us Now
-                <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-black translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-y-0" />
-            </a>
-          </Button>
-        </motion.div>
       </section>
 
       <Footer />

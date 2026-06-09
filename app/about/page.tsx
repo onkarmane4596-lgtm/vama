@@ -59,7 +59,7 @@ export default function About() {
               About Us
             </motion.h1>
             <motion.p variants={fadeIn} className="text-sm md:text-xl text-white/70 max-w-xl font-light leading-relaxed">
-              Bringing the best Japanese and Ayurvedic therapies to Pune.
+              Certified International Beauty, Spa &amp; Healing Programs.
             </motion.p>
           </motion.div>
         </div>
@@ -86,14 +86,17 @@ export default function About() {
               
               <motion.div variants={fadeIn} className="space-y-6 text-sm md:text-lg text-black/60 font-light leading-relaxed mb-8">
                 <p>
-                  <strong className="text-black font-semibold">VAMA Therapy</strong> is proud to be Pune's first Japanese hair and head massage center. Founded with a vision to bring authentic healing traditions to modern wellness seekers, we have dedicated ourselves to mastering the intricate art of Shiatsu and Ayurvedic therapies.
+                  <strong className="text-black font-semibold">VAMA Therapy Academy</strong> is India&apos;s premier training center for high-end international beauty, spa, and energy-healing therapies. Originally established as Pune&apos;s first Japanese hair and head massage sanctuary, we have evolved to share our authentic healing traditions with aspiring practitioners worldwide.
                 </p>
                 <p>
-                  Over five years of excellence, we've served thousands of clients, transforming their wellness journey through personalized treatments that honor both ancient wisdom and contemporary health science.
+                  Under the guidance of <strong className="text-black font-semibold">Madhu Mam</strong>, our programs combine traditional Eastern principles with practical business knowledge. We have successfully certified salon owners, beauticians, and beginners, helping them establish independent wellness studios, attract premium clients, and build lucrative careers.
+                </p>
+                <p>
+                  Our curriculum is recognized under <strong className="text-black font-semibold">VAMA Therapy IAF ISO Certification</strong>, validating our dedication to international quality, hands-on demonstration, and genuine student mentorship.
                 </p>
                 <div className="border-l-2 border-black/20 pl-4 py-1 my-6">
                   <p className="font-medium text-black italic">
-                    "Every session at VAMA Therapy is designed to help you completely relax and recharge."
+                    &ldquo;Vama Therapy is for anyone who wants to heal, glow, and grow—personally or professionally.&rdquo;
                   </p>
                 </div>
               </motion.div>
@@ -106,7 +109,7 @@ export default function About() {
               className="w-full lg:w-1/2 relative h-[350px] md:h-[600px] rounded-[2rem] overflow-hidden group shadow-2xl"
             >
               <Image
-                src="/facial-therapy.jpg"
+                src="/hero-spa.jpg"
                 alt="VAMA Therapy Story"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -209,28 +212,28 @@ export default function About() {
           >
             {[
               {
-                title: "Authentic Training",
-                desc: "Therapists trained in Japanese Shiatsu & classical Ayurvedic methods."
+                title: "Authentic Curriculum",
+                desc: "Learn international standard Japanese Facials, Scalp treatments, Bamboo stick massage, and Reiki Sound healing."
               },
               {
-                title: "Personalized Care",
-                desc: "Treatments carefully customized based on specific wellness goals."
+                title: "Hands-on Practice",
+                desc: "Extensive practice on professional Japanese and Korean beds with live demonstrations."
               },
               {
-                title: "Premium Sanctuary",
-                desc: "A beautifully appointed environment dedicated to deep relaxation."
+                title: "Business Mentorship",
+                desc: "Instagram growth blueprint, branding secrets, and wholesale equipment purchasing guides."
               },
               {
-                title: "Holistic Health",
-                desc: "Addressing root causes of imbalance, not just surface symptoms."
+                title: "ISO Certification",
+                desc: "Receive IAF ISO certified credentials to establish professional authority and Salon trust."
               },
               {
-                title: "Proven Results",
-                desc: "A highly-rated wellness experience trusted by thousands of satisfied clients in Pune."
+                title: "Lifetime Support",
+                desc: "Unlimited doubts clearing on WhatsApp and weekly mindset/manifestation webinars on Mondays."
               },
               {
-                title: "Modern Precision",
-                desc: "The perfect synergy of ancient wisdom and modern aesthetic science."
+                title: "Proven Success",
+                desc: "A certified program that has successfully helped students all over India launch home-salons."
               }
             ].map((item, index) => (
               <motion.div 
@@ -277,10 +280,10 @@ export default function About() {
 
           <div className="w-12 md:w-20 h-[1px] bg-white/30 mb-8 md:mb-12"></div>
           <h2 className="text-4xl md:text-6xl lg:text-8xl font-serif font-bold text-white mb-6 uppercase tracking-tight leading-[1.1] drop-shadow-xl">
-            Ready to <br className="hidden md:block"/> Relax?
+            Ready to <br className="hidden md:block"/> Start?
           </h2>
           <p className="text-sm md:text-xl text-white/70 mb-10 max-w-2xl mx-auto font-light leading-relaxed tracking-wide">
-            Join thousands of happy clients who have experienced our premium therapies.
+            Join hundreds of successful graduates who built their own beauty &amp; healing business.
           </p>
           <Button 
             size="lg"
@@ -289,7 +292,7 @@ export default function About() {
           >
             <a href="https://wa.me/919172550666" target="_blank" rel="noopener noreferrer">
               <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3">
-                Schedule Session
+                Enquire Now
                 <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-black translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-y-0" />

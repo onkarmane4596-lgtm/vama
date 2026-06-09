@@ -17,7 +17,7 @@ export function Header() {
     setIsScrolled(latest > 50)
   })
 
-  const navItems = ['Home', 'Services', 'About', 'Contact']
+  const navItems = ['Home', 'Courses', 'About', 'Contact']
 
   return (
     <>
@@ -91,7 +91,7 @@ export function Header() {
                 asChild
               >
                 <a href="https://wa.me/919172550666" target="_blank" rel="noopener noreferrer">
-                  Book Session
+                  Enquire Now
                 </a>
               </Button>
             </div>
@@ -216,7 +216,7 @@ export function Header() {
                   asChild
                 >
                   <a href="https://wa.me/919172550666" target="_blank" rel="noopener noreferrer">
-                    Book A Visit
+                    Enquire Now
                   </a>
                 </Button>
 
