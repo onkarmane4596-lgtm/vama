@@ -56,7 +56,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-2">
+          <nav className="hidden md:flex items-center gap-2" aria-label="Main navigation">
             {navItems.map((item, index) => (
               <Link
                 key={item}
@@ -99,6 +99,9 @@ export function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-controls="mobile-nav"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
               className={`md:hidden p-3 rounded-full transition-colors ${isScrolled ? 'bg-white/10 hover:bg-white/20' : 'bg-black/5 hover:bg-black/10'
                 }`}
             >
@@ -163,7 +166,7 @@ export function Header() {
               </div>
 
               {/* Navigation Links */}
-              <nav className="flex flex-col gap-6 mb-12">
+              <nav id="mobile-nav" className="flex flex-col gap-6 mb-12" aria-label="Mobile navigation">
                 {navItems.map((item, index) => (
                   <motion.div
                     key={item}

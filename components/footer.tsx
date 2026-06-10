@@ -84,9 +84,9 @@ export function Footer() {
                 <div className="w-10 h-10 border border-white/20 flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:text-black transition-colors">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <span className="text-white/60 text-sm font-light leading-relaxed">
+                <address className="not-italic text-white/60 text-sm font-light leading-relaxed">
                   93 Avenue Mall, Wanowrie,<br />Pune, Maharashtra 411022
-                </span>
+                </address>
               </li>
               <li className="flex gap-4 group">
                 <div className="w-10 h-10 border border-white/20 flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:text-black transition-colors">
@@ -94,6 +94,14 @@ export function Footer() {
                 </div>
                 <a href="tel:+919172550666" className="text-white/60 hover:text-white transition-colors text-sm font-light mt-2 tracking-wider">
                   +91 9172 550 666
+                </a>
+              </li>
+              <li className="flex gap-4 group">
+                <div className="w-10 h-10 border border-white/20 flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:text-black transition-colors">
+                  <Mail className="w-4 h-4" />
+                </div>
+                <a href="mailto:vamatherapy@gmail.com" className="text-white/60 hover:text-white transition-colors text-sm font-light mt-2">
+                  vamatherapy@gmail.com
                 </a>
               </li>
             </ul>
@@ -111,7 +119,8 @@ export function Footer() {
             <a
               href="https://www.instagram.com/vamatherapy/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer me"
+              aria-label="VAMA Therapy Academy on Instagram"
               className="w-10 h-10 md:w-12 md:h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
             >
               <Instagram className="w-4 h-4 md:w-5 md:h-5" />
@@ -119,7 +128,8 @@ export function Footer() {
             <a
               href="https://www.facebook.com/p/Vama-Therapy-61556708758564/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer me"
+              aria-label="VAMA Therapy Academy on Facebook"
               className="w-10 h-10 md:w-12 md:h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
             >
               <Facebook className="w-4 h-4 md:w-5 md:h-5" />
@@ -127,7 +137,8 @@ export function Footer() {
             <a
               href="https://www.youtube.com/@VamaTherapy"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer me"
+              aria-label="VAMA Therapy Academy on YouTube"
               className="w-10 h-10 md:w-12 md:h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
             >
               <Youtube className="w-4 h-4 md:w-5 md:h-5" />
@@ -136,7 +147,7 @@ export function Footer() {
         </div>
 
         <div className="text-center text-white/40 text-[10px] md:text-xs font-light tracking-widest mt-16 uppercase flex flex-col items-center gap-4">
-          <p>&copy; {new Date().getFullYear()} VAMA Therapy. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} VAMA Therapy Academy. All rights reserved.</p>
           <div className="flex items-center gap-2 text-white/20">
             <span>Powered by</span>
             <a 
