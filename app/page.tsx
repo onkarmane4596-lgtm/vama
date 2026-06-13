@@ -146,7 +146,7 @@ export default function Home() {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-65 grayscale transition-opacity duration-1000"
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
           >
             <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
@@ -165,14 +165,14 @@ export default function Home() {
           className="relative z-20 container mx-auto px-6 md:px-12 mt-24 flex flex-col justify-center h-full pb-24 md:pb-40"
         >
           <div className="max-w-4xl mx-auto md:mx-0 flex flex-col items-center md:items-start text-center md:text-left mt-20">
-            <motion.div variants={fadeIn} className="inline-flex items-center gap-3 mb-6 bg-white/10 backdrop-blur-md px-4 py-2 border border-white/20">
-              <img src="/logo black.png" alt="VAMA Logo" className="w-4 h-4 object-contain invert brightness-0" />
-              <span className="text-white text-[10px] md:text-xs uppercase tracking-[0.25em] font-bold">India&apos;s First International Therapy Program</span>
+            <motion.div variants={fadeIn} className="inline-flex items-center gap-3 mb-6 bg-white shadow-lg px-4 py-2 border border-black/5 rounded-sm">
+              <img src="/logo black.png" alt="VAMA Logo" className="w-4 h-4 object-contain" />
+              <span className="text-black text-[10px] md:text-xs uppercase tracking-[0.25em] font-bold">India&apos;s First International Therapy Program</span>
             </motion.div>
 
             <motion.h1
               variants={fadeIn}
-              className="text-4xl md:text-7xl lg:text-8xl font-serif mb-6 tracking-tight leading-[1.1] text-white drop-shadow-2xl flex flex-col gap-2 uppercase font-bold"
+              className="text-4xl md:text-7xl lg:text-8xl font-serif mb-6 tracking-tight leading-[1.1] text-white drop-shadow-2xl flex flex-col gap-2 uppercase font-bold [text-shadow:_0_4px_12px_rgb(0_0_0_/_0.4)]"
             >
               <span className="font-light opacity-90 text-2xl md:text-5xl">Become a Certified</span>
               <span className="tracking-widest">VAMA Therapist</span>
@@ -180,7 +180,7 @@ export default function Home() {
 
             <motion.p
               variants={fadeIn}
-              className="text-lg md:text-2xl text-white/95 mb-12 font-sans font-light max-w-2xl leading-relaxed drop-shadow-lg tracking-wide"
+              className="text-lg md:text-2xl text-white/95 mb-12 font-sans font-light max-w-2xl leading-relaxed drop-shadow-lg tracking-wide [text-shadow:_0_2px_8px_rgb(0_0_0_/_0.4)]"
             >
               Unlock High-Profit Career Opportunities with High-End International Beauty &amp; Spa Services. Designed by Vama Therapy.
             </motion.p>
@@ -305,7 +305,7 @@ export default function Home() {
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               >
-                <source src="/videos/home.mp4" type="video/mp4" />
+                <source src="/videos/vama.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               
@@ -447,28 +447,35 @@ export default function Home() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 title: "Facial Therapy",
-                description: "Luxurious Japanese Kobido & Tsuboki face lifting methods combining physical detox and chakra healing.",
-                video: "/videos/facial.mp4",
+                description: "Luxurious Japanese Kobido face lifting methods and the right way to choose facial kits.",
+                video: "/videos/course/facial-course.mp4",
                 number: "01",
                 link: "/courses#facial-therapy"
               },
               {
-                title: "Head & Hair",
-                description: "Premium head, scalp and luxury hair spa therapy using aromatherapy and meditative self-healing protocols.",
-                video: "/videos/headhair.mp4",
+                title: "Banana Leaf Therapy",
+                description: "Ayurvedic Hair & Scalp Detox using fresh banana leaf wrapping for deep nourishment.",
+                video: "/videos/course/banana-leaf.mp4",
                 number: "02",
-                link: "/courses#head-hair-therapy"
+                link: "/courses#banana-leaf-scalp"
               },
               {
-                title: "Pedicure Therapy",
-                description: "Foot care, jelly masks, candle pedicure methods, reflexology, and traditional tool applications.",
-                video: "/videos/pedicure.mp4",
+                title: "Face Reflexology",
+                description: "Learn facial nerve points and Guasha techniques for natural lifting and anti-stress.",
+                video: "/videos/course/guasha.mp4",
                 number: "03",
-                link: "/courses#pedicure-therapy"
+                link: "/courses#face-reflexology"
+              },
+              {
+                title: "Music Therapy",
+                description: "7 Chakra Sound Bath Healing with Tibetan Bowls and Reiki energy balancing.",
+                video: "/videos/course/music-therapy.mp4",
+                number: "04",
+                link: "/courses#sound-bath-reiki"
               }
             ].map((service, index) => (
               <motion.div
@@ -477,37 +484,35 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.15 }}
-                className="group relative overflow-hidden flex-none snap-center cursor-pointer h-[500px] bg-black rounded-3xl border border-white/10"
+                className="group relative overflow-hidden flex-none snap-center h-[500px] bg-black rounded-3xl border border-white/10"
               >
-                <Link href={service.link} className="absolute inset-0 w-full h-full block">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover opacity-60 md:opacity-50 md:group-hover:opacity-85 transition-all duration-1000"
-                  >
-                    <source src={service.video} type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-                  <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                    <div className="transform md:translate-y-6 md:group-hover:translate-y-0 transition-transform duration-700">
-                      <div className="text-white/50 font-sans tracking-[0.2em] text-xs mb-3 font-semibold flex items-center gap-3">
-                        <span className="w-8 h-[1px] bg-white/30"></span>
-                        {service.number}
-                      </div>
-                      <h3 className="text-3xl font-serif font-bold text-white mb-3 uppercase tracking-wider">
+                <video
+                  controls
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover opacity-60 md:opacity-50 md:group-hover:opacity-85 transition-all duration-1000"
+                >
+                  <source src={service.video} type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end pointer-events-none">
+                  <div className="transform md:translate-y-6 md:group-hover:translate-y-0 transition-transform duration-700">
+                    <div className="text-white/50 font-sans tracking-[0.2em] text-xs mb-3 font-semibold flex items-center gap-3">
+                      <span className="w-8 h-[1px] bg-white/30"></span>
+                      {service.number}
+                    </div>
+                    <Link href={service.link} className="pointer-events-auto inline-block">
+                      <h3 className="text-3xl font-serif font-bold text-white mb-3 uppercase tracking-wider hover:underline">
                         {service.title}
                       </h3>
-                      <p className="text-white/70 font-light text-sm max-w-sm mb-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
-                        {service.description}
-                      </p>
-                      <div className="inline-flex w-10 h-10 rounded-full border border-white/30 items-center justify-center bg-white/10 group-hover:bg-white group-hover:text-black transition-all">
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </div>
+                    </Link>
+                    <p className="text-white/70 font-light text-sm max-w-sm mb-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
+                      {service.description}
+                    </p>
+                    <Link href={service.link} className="pointer-events-auto inline-flex w-10 h-10 rounded-full border border-white/30 items-center justify-center bg-white/10 hover:bg-white hover:text-black transition-all">
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -652,22 +657,22 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="col-span-2 relative h-[300px] md:h-[400px] rounded-3xl overflow-hidden group">
-              <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+              <video controls playsInline className="absolute inset-0 w-full h-full object-cover">
                 <source src="/videos/vama.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-black/30"></div>
-              <div className="absolute bottom-6 left-6 bg-black/60 px-4 py-2 border border-white/20 text-xs tracking-wider uppercase rounded-full">
+              <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
+              <div className="absolute bottom-6 left-6 bg-black/60 px-4 py-2 border border-white/20 text-xs tracking-wider uppercase rounded-full pointer-events-none text-white">
                 Interactive Training
               </div>
             </div>
             <div className="relative h-[200px] md:h-[400px] rounded-3xl overflow-hidden">
-              <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-                <source src="/videos/facial.mp4" type="video/mp4" />
+              <video controls playsInline className="absolute inset-0 w-full h-full object-cover">
+                <source src="/videos/course/facial-course.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="relative h-[200px] md:h-[400px] rounded-3xl overflow-hidden">
-              <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-                <source src="/videos/pedicure.mp4" type="video/mp4" />
+              <video controls playsInline className="absolute inset-0 w-full h-full object-cover">
+                <source src="/videos/course/music-therapy.mp4" type="video/mp4" />
               </video>
             </div>
           </div>

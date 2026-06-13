@@ -109,7 +109,7 @@ export default function About() {
               className="w-full lg:w-1/2 relative h-[350px] md:h-[600px] rounded-[2rem] overflow-hidden group shadow-2xl"
             >
               <Image
-                src="/hero-spa.jpg"
+                src="/1.jpeg"
                 alt="VAMA Therapy Story"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
