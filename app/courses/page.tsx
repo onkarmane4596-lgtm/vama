@@ -424,17 +424,16 @@ export default function Courses() {
             </div>
 
             {/* Pricing Card */}
-            <div className="lg:col-span-5 bg-white text-black p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative">
+            <div className="lg:col-span-5 bg-white text-black p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative border-2 border-[#EAB308]/20">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#EAB308] text-white text-[10px] uppercase tracking-[0.2em] font-bold px-4 py-1.5 rounded-full shadow-sm whitespace-nowrap">
+                Limited Time Offer
+              </div>
               <h3 className="font-serif font-bold text-xl uppercase tracking-wider mb-6 text-center">Bundle Fees Summary</h3>
               
-              <div className="space-y-3 mb-8 text-sm text-black/60 font-light border-b border-black/10 pb-6">
+              <div className="space-y-3 mb-6 text-sm text-black/60 font-light border-b border-black/10 pb-6">
                 <div className="flex justify-between">
                   <span>10 Courses Individual Total</span>
-                  <span className="line-through">₹1,65,000</span>
-                </div>
-                <div className="flex justify-between text-black font-semibold">
-                  <span>Special Bundle Price</span>
-                  <span>₹1,20,000</span>
+                  <span>₹1,65,000</span>
                 </div>
                 <div className="flex justify-between">
                   <span>GST (18%)</span>
@@ -444,12 +443,16 @@ export default function Courses() {
                   <span>Food &amp; Accommodation Stay</span>
                   <span>₹20,000</span>
                 </div>
+                <div className="flex justify-between text-black font-medium pt-3 mt-3 border-t border-black/5">
+                  <span>Original Total Value</span>
+                  <span className="line-through text-black/40">₹2,15,000</span>
+                </div>
               </div>
 
               <div className="text-center mb-8">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-black/50 font-bold mb-1">Total Package Price (All Inclusive)</p>
-                <p className="text-5xl font-serif font-bold text-black">₹2,15,000</p>
-                <p className="text-[10px] text-black/40 mt-1 uppercase font-semibold">stay, food &amp; materials included</p>
+                <p className="text-xs uppercase tracking-[0.15em] text-black/60 font-bold mb-2">Final Payable Amount</p>
+                <p className="text-6xl font-serif font-bold text-black mb-1">₹1,20,000</p>
+                <p className="text-[10px] text-black/40 mt-2 uppercase font-bold tracking-wider">All Inclusive (Stay, Food, GST &amp; Materials)</p>
               </div>
 
               <Button size="lg" className="w-full bg-black text-white hover:bg-black/90 py-7 uppercase tracking-[0.15em] text-xs font-bold rounded-xl" asChild>
