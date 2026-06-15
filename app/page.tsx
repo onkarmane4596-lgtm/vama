@@ -26,7 +26,7 @@ const staggerContainer = {
 
 export default function Home() {
   const { scrollY } = useScroll()
-  const y1 = useTransform(scrollY, [0, 1000], [0, 200])
+  const y1 = useTransform(scrollY, [0, 1000], [0, 100])
   const [isMobile, setIsMobile] = useState(true)
 
   const [formData, setFormData] = useState({
@@ -146,49 +146,49 @@ export default function Home() {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+            className="absolute inset-0 w-full h-full object-cover scale-150 md:scale-[2] lg:scale-[2.5] origin-center transition-opacity duration-1000"
           >
             <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
         </motion.div>
 
-        {/* Seamless White Top Mask for Header Visibility */}
-        <div className="absolute top-0 left-0 right-0 h-[40vh] bg-gradient-to-b from-white via-white/60 to-transparent z-10 pointer-events-none"></div>
+        {/* Seamless Top Mask for Header Visibility */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/40 to-transparent z-10 pointer-events-none"></div>
         {/* Soft bottom vignette */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black via-black/40 to-transparent z-10 pointer-events-none"></div>
 
         {/* Hero Content */}
         <motion.div
           initial="initial"
           animate="animate"
           variants={staggerContainer}
-          className="relative z-20 container mx-auto px-6 md:px-12 mt-24 flex flex-col justify-center h-full pb-24 md:pb-40"
+          className="relative z-20 container mx-auto px-6 md:px-12 flex flex-col justify-center h-full pt-32 pb-12"
         >
-          <div className="max-w-4xl mx-auto md:mx-0 flex flex-col items-center md:items-start text-center md:text-left mt-20">
-            <motion.div variants={fadeIn} className="inline-flex items-center gap-3 mb-6 bg-white shadow-lg px-4 py-2 border border-black/5 rounded-sm">
-              <img src="/logo black.png" alt="VAMA Logo" className="w-4 h-4 object-contain" />
-              <span className="text-black text-[10px] md:text-xs uppercase tracking-[0.25em] font-bold">India&apos;s First International Therapy Program</span>
+          <div className="max-w-4xl mx-auto md:mx-0 flex flex-col items-center md:items-start text-center md:text-left mt-10">
+            <motion.div variants={fadeIn} className="inline-flex items-center gap-3 mb-6 bg-white/10 backdrop-blur-md shadow-lg px-4 py-2 border border-white/20 rounded-full">
+              <img src="/logo black.png" alt="VAMA Logo" className="w-4 h-4 object-contain brightness-0 invert" />
+              <span className="text-white text-[10px] md:text-xs uppercase tracking-[0.25em] font-bold">India&apos;s First International Therapy Program</span>
             </motion.div>
 
             <motion.h1
               variants={fadeIn}
-              className="text-4xl md:text-7xl lg:text-8xl font-serif mb-6 tracking-tight leading-[1.1] text-white drop-shadow-2xl flex flex-col gap-2 uppercase font-bold [text-shadow:_0_4px_12px_rgb(0_0_0_/_0.4)]"
+              className="text-4xl md:text-6xl lg:text-7xl font-serif mb-6 tracking-tight leading-[1.1] text-white drop-shadow-2xl flex flex-col gap-2 uppercase font-bold [text-shadow:_0_4px_12px_rgb(0_0_0_/_0.6)]"
             >
-              <span className="font-light opacity-90 text-2xl md:text-5xl">Become a Certified</span>
+              <span className="font-light opacity-90 text-2xl md:text-4xl">Become a Certified</span>
               <span className="tracking-widest">VAMA Therapist</span>
             </motion.h1>
 
             <motion.p
               variants={fadeIn}
-              className="text-lg md:text-2xl text-white/95 mb-12 font-sans font-light max-w-2xl leading-relaxed drop-shadow-lg tracking-wide [text-shadow:_0_2px_8px_rgb(0_0_0_/_0.4)]"
+              className="text-lg md:text-xl text-white/95 mb-10 font-sans font-light max-w-2xl leading-relaxed drop-shadow-lg tracking-wide [text-shadow:_0_2px_8px_rgb(0_0_0_/_0.6)]"
             >
               Unlock High-Profit Career Opportunities with High-End International Beauty &amp; Spa Services. Designed by Vama Therapy.
             </motion.p>
 
-            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
+            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto justify-center md:justify-start">
               <Button
                 size="lg"
-                className="group relative overflow-hidden bg-white text-black hover:text-white text-sm uppercase tracking-[0.15em] font-medium px-12 py-8 rounded-none transition-all duration-300 w-full sm:w-auto shadow-2xl"
+                className="group relative overflow-hidden bg-white text-black hover:text-white text-sm uppercase tracking-[0.15em] font-medium px-10 py-7 rounded-none transition-all duration-300 w-full sm:w-auto shadow-2xl"
                 asChild
               >
                 <Link href="/courses">
@@ -202,7 +202,7 @@ export default function Home() {
               
               <Button
                 size="lg"
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black text-sm uppercase tracking-[0.15em] font-medium px-12 py-8 rounded-none transition-all duration-300 w-full sm:w-auto"
+                className="bg-black/50 backdrop-blur-md border border-white/50 text-white hover:bg-white hover:text-black text-sm uppercase tracking-[0.15em] font-medium px-10 py-7 rounded-none transition-all duration-300 w-full sm:w-auto"
                 asChild
               >
                 <a href="#consultation">
@@ -211,7 +211,7 @@ export default function Home() {
               </Button>
             </motion.div>
             
-            <motion.div variants={fadeIn} className="mt-8 flex items-center gap-2 text-white/60 text-xs">
+            <motion.div variants={fadeIn} className="mt-8 flex items-center justify-center md:justify-start gap-2 text-white/80 text-xs">
               <Smartphone className="w-4 h-4" />
               <span>Call / WhatsApp support: <a href="tel:+919172550666" className="font-semibold text-white hover:underline">+91 9172550666</a></span>
             </motion.div>
