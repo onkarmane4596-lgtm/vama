@@ -194,7 +194,7 @@ const organizationJsonLd = {
       },
       sameAs: [
         'https://wa.me/919172550666',
-        'https://www.instagram.com/vamatherapy/',
+        'https://www.instagram.com/vama_therapy?igsh=ODU2ZWF5NzR5bjNl',
         'https://www.facebook.com/p/Vama-Therapy-61556708758564/',
         'https://www.youtube.com/@VamaTherapy',
       ],

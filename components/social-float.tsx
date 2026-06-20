@@ -31,7 +31,7 @@ export function SocialFloat() {
     {
       name: 'Instagram',
       icon: <Instagram className="w-5 h-5" />,
-      href: 'https://www.instagram.com/vamatherapy/',
+      href: 'https://www.instagram.com/vama_therapy?igsh=ODU2ZWF5NzR5bjNl',
       color: 'bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]',
       label: 'Follow us'
     },

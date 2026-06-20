@@ -197,7 +197,7 @@ export function Header() {
                   <p className="text-white/40 text-[10px] uppercase tracking-[0.4em] font-bold">Connect With Us</p>
                   <div className="flex justify-center gap-8">
                     {[
-                      { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/vamatherapy/' },
+                      { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/vama_therapy?igsh=ODU2ZWF5NzR5bjNl' },
                       { icon: <Smartphone className="w-5 h-5" />, href: 'https://wa.me/919172550666' }
                     ].map((social, i) => (
                       <motion.a

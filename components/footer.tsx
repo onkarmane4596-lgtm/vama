@@ -117,7 +117,7 @@ export function Footer() {
 
           <div className="flex gap-4">
             <a
-              href="https://www.instagram.com/vamatherapy/"
+              href="https://www.instagram.com/vama_therapy?igsh=ODU2ZWF5NzR5bjNl"
               target="_blank"
               rel="noopener noreferrer me"
               aria-label="VAMA Therapy Academy on Instagram"
